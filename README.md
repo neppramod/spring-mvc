@@ -34,8 +34,10 @@ Run the project
 ===============
 After you run spring.sh a project directory will be created (if you don't override ARTIFACT_ID the project will be usually called "tmpprj" with package name "change.packages.name". Make sure you have mysql installed.
 
+$ spring.sh
+
 Unless you override spring.cfg database name is going to be ARTIFACT_ID (project name), username is going to be "root" and password "password". Database will be configured to use InnoDB and it will be generated when you start adding the domain classes.
 
 Go into the project directory and run it.
 
-mvn clean package jetty:run
+$ mvn clean package jetty:run
