@@ -13,7 +13,7 @@ else
 	echo "Directory already exists overriding it"
 fi
 
-cp -R conf data help README.md $SCRIPT_DIRECTORY
+cp -R conf modules help README.md $SCRIPT_DIRECTORY
 chmod -R 755 $SCRIPT_DIRECTORY
 
 echo ""
