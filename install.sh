@@ -14,6 +14,7 @@ else
 fi
 
 cp -R conf data help README.md $SCRIPT_DIRECTORY
+chmod -R 755 $SCRIPT_DIRECTORY
 
 echo ""
 echo "Successfully installed"
