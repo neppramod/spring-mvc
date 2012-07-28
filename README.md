@@ -48,5 +48,5 @@ $ mvn clean package jetty:run
 
 New changes
 ===========
-Now the project contains generic dao, generic service (still needs to be tested) and reference project. You can still disable what to include and what not to include.
+Now the project contains generic dao, generic service (still needs to be tested) and reference project. You can still configure what to include and what not to include.
 
