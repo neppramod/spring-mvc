@@ -20,9 +20,15 @@ public class '''$CONTROLLER_CLASS''' {
 
 echo '''
 <html>
-	<head>Welcome Page</head>
+	<head>
+    <title>Welcome Page</title>
+    </head>
 	<body>
-		<h1>Welcome Page</h1>
-	</body>
+		<h1>Welcome Page</h1>''' > src/main/webapp/WEB-INF/jsp/welcome.jsp
+		if [ $USE_REFERENCE_IMPLEMENTATION = "y" ]; then
+			echo '''<p>See <a href="resources/links.jsp">Links</a> for other pages</p>''' >> src/main/webapp/WEB-INF/jsp/welcome.jsp
+		fi
+
+echo '''	</body>
 </html>
-''' > src/main/webapp/WEB-INF/jsp/welcome.jsp
+''' >> src/main/webapp/WEB-INF/jsp/welcome.jsp

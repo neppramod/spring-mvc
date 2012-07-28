@@ -26,20 +26,28 @@ if [ ! -d $ARTIFACT_ID ]; then
 	source $DATA_DIRECTORY/pom.xml.sh > pom.xml
 	source $DATA_DIRECTORY/web.xml.sh > src/main/webapp/WEB-INF/web.xml
 	cp $DATA_DIRECTORY/messages.properties src/main/webapp/WEB-INF/messages/
-	source $DATA_DIRECTORY/spring.properties.sh > src/main/webapp/WEB-INF/messages/spring.properties
+	source $DATA_DIRECTORY/spring.properties.sh > src/main/webapp/WEB-INF/cfg/spring.properties
 	source $DATA_DIRECTORY/hibernate.cfg.xml.sh > src/main/webapp/WEB-INF/hibernate.cfg.xml
-	source $DATA_DIRECTORY/servlet.xml.sh > src/main/webapp/WEB-INF/$SERVLET_NAME-servlet.xml
-
-	if [ $USE_SERVICE_CONF = "y" ]; then
-		source $DATA_DIRECTORY/service.xml.sh > src/main/webapp/WEB-INF/$SERVICE_CONF
-	fi
+	source $DATA_DIRECTORY/spring-servlet.xml.sh > src/main/webapp/WEB-INF/$SERVLET_NAME-servlet.xml
 
 	if [ $USE_DATA_CONF = "y" ]; then
-		source $DATA_DIRECTORY/data.xml.sh > src/main/webapp/WEB-INF/$DATA_CONF
+		source $DATA_DIRECTORY/spring-data.xml.sh > src/main/webapp/WEB-INF/$DATA_CONF
 	fi
 
 	if [ $CREATE_WELCOME_CONTROLLER = "y" ]; then
 		source "$DATA_DIRECTORY/welcomeclass.sh"
+	fi
+
+	if [ $CREATE_GENERIC_DAO = "y" ]; then
+		source "$DATA_DIRECTORY/genericdao.sh"
+	fi
+
+	if [ $CREATE_GENERIC_SERVICE = "y" ]; then
+		source "$DATA_DIRECTORY/genericservice.sh"
+	fi
+
+	if [ $USE_REFERENCE_IMPLEMENTATION="y" ]; then
+		source "$DATA_DIRECTORY/referenceimplementation.sh"
 	fi
 
 	echo "Project \"$ARTIFACT_ID\" successfully created. !!"	
