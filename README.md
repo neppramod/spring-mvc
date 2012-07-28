@@ -50,3 +50,6 @@ New changes
 ===========
 Now the project contains generic dao, generic service (still needs to be tested) and reference project. You can still configure what to include and what not to include.
 
+LICENSE
+=======
+GNU LESSER GENERAL PUBLIC LICENSE. For more information visit (http://www.gnu.org/licenses/lgpl.html).
